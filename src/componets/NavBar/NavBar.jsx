@@ -1,17 +1,32 @@
-import CartWidget from "./CartWidget"
-import "./NavBar.css"
+import CartWidget from "./CartWidget";
+import "./NavBar.css";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
     return (
         <div id="navbar">
-            <a href="index.html" className="navbar-brand">
+            <Link to="/" className="navbar-brand">
                 <img src="/tt_logo_white.png" alt="Trendy Tech Logo" className="logo"></img>
-            </a>
+            </Link>
             <ul>
-                <li><a href="#audio">Audio</a></li>
-                <li><a href="#computación">Computación</a></li>
-                <li><a href="#celulares">Celulares</a></li>
-                <li><a href="#monitores">Monitores</a></li>
+                <li>
+                    <Link to="/categorias/smartphones">Smartphones</Link>
+                </li>
+                <li>
+                    <Link to="/categorias/laptops">Laptops</Link>
+                </li>
+                <li>
+                    <Link to="/categorias/fragrances">Fragancias</Link>
+                </li>
+                <li>
+                    <Link to="/categorias/skincare">Cuidado de la piel</Link>
+                </li>
+                <li>
+                    <Link to="/categorias/groceries">Comestibles</Link>
+                </li>
+                <li>
+                    <Link to="/categorias/home-decoration">Decoración</Link>
+                </li>
             </ul>
             <div id="cart-widget">
                 <a className="active" href="#contact"><CartWidget/></a>

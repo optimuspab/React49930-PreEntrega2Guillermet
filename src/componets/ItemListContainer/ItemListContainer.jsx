@@ -1,15 +1,25 @@
 import { useEffect, useState } from "react";
-import getProducts from "../utils/asyncMock"
+import { useParams } from "react-router-dom";
+import getProducts from "../utils/asyncMock";
 import ItemList from "../ItemList/ItemList";
 
 const ItemListContainer = ({ greeting }) => {
 
     const [products, setProducts] = useState([])
 
+    const { categoria } = useParams();
+
     useEffect(() => {
         getProducts
             .then((respuesta) => {
-                setProducts(respuesta)
+                if(categoria){
+                    const filteredProducts = respuesta.filter(
+                        (product) => product.category === categoria
+                      );
+                      setProducts(filteredProducts);
+                }else{
+                    setProducts(respuesta);
+                }
             })
             .catch((error) => {
                 console.log(error);
@@ -17,7 +27,7 @@ const ItemListContainer = ({ greeting }) => {
             .finally(() => {
                 console.log("finalizó");
             })
-    }, [])
+    }, [categoria])
 
     return (
         <div>
