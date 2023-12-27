@@ -21,14 +21,11 @@
   text-decoration: none;
 }
 
-#app #navbar .navbar-brand {
-  align-self: center
-}
-
 #navbar .navbar-brand img {
   max-width: 100px;
   height: auto;
 }
+
 #navbar .navbar-brand a:hover {
   background-color: #111;
 }

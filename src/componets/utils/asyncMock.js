@@ -555,8 +555,17 @@ const products = [
 
 const getProducts = new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(products);
+        resolve(products);
     }, 2000);
-  });
-  
-  export default getProducts
+});
+
+export default getProducts
+
+
+export const obtenerProductos = () => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(products)
+        }, 500)
+    })
+}

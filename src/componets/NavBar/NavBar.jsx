@@ -2,10 +2,14 @@ import CartWidget from "./CartWidget";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
 
+const brandStyle = {
+    alignSelf: 'center',
+};
+
 const NavBar = () => {
     return (
         <div id="navbar">
-            <Link to="/" className="navbar-brand">
+            <Link to="/" className="navbar-brand" style={brandStyle}>
                 <img src="/tt_logo_white.png" alt="Trendy Tech Logo" className="logo"></img>
             </Link>
             <ul>
